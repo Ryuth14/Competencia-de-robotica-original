@@ -1,0 +1,367 @@
+/*Quita el margin de las imagenes*/
+body {
+    margin: 0;
+}
+
+/*Adapta la imagen de la portada a cualquier resolucion*/
+.portada_imagen {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    display: block;
+}
+
+/* Ubica el contenedor de la lupa */
+#lupa_contenedor {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    overflow: hidden;
+
+    /* Fixed area relative to the screen */
+    width: 40vw;
+    height: 40vh;
+}
+
+/* Image of the magnifying glass inside the container */
+#lupa_contenedor img {
+    width: 100%;
+    height: 100%;
+    /* fill stretches the image to fill the container */
+    object-fit: fill;
+}
+
+#lupa_contenedor a {
+    position: absolute;
+
+    /* Adjust to match the magnifying glass */
+    top: 5%;
+    left: 50%;
+    width: 45%;
+    height: 35%;
+
+    border-radius: 50%;
+}
+
+/*Ubica el texto del indicador en el centro y se le da la propiedad de animacion */
+#indicador_lupa {
+    position: absolute;
+    bottom: 1%;
+    left: 50%;
+    transform: translateX(-50%);
+    /*Hace que se centre exacto*/
+    animation: parpadeo 0.5s infinite;
+}
+
+/*Como deberia de ser la animacion del indicador*/
+@keyframes parpadeo {
+    0% {
+        opacity: 0.2;
+    }
+
+    /* Casi invisible */
+    50% {
+        opacity: 1;
+    }
+
+    /*Visible */
+    100% {
+        opacity: 0.2;
+    }
+
+    /*Casi invisible */
+}
+
+/*Adapta la imagen de la pagina 2 a cualquier resolucion*/
+#pagina_categorias {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    display: block;
+}
+
+/*Adapta el contenedor de las carpetas a cualquier resolucion, se le da un gap para que haya espacio entre las carpetas y se ubica en el centro de la pagina 2*/
+#categorias {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: block;
+}
+
+/*Pone las carpetas alineadas una al lado de la otra y las ubica en el centro de la pagina 2*/
+.carpetas_contenedor {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    top: 53%;
+    left: 50%;
+    gap: 7vh;
+    transform: translateX(-50%) translateY(-50%) scale(0.9);
+}
+
+/*Animacion de agrandado con transicion suave*/
+.carpeta {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    will-change: transform;
+    display: inline-block;
+}
+
+.carpeta:hover {
+    transform: scale(1.12);
+}
+
+/*El "width: fit-content;" es porque el gap no reducia el espacio entre las carpetas y se tuvo 
+que forzar el contenedor para que sea muy pequeño y que el gap sea el que defina la distancia*/
+
+/*Adapta la imagen de las instrucciones a cualquier resolucion*/
+.instrucciones_imagen {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    display: block;
+}
+
+.portada_laboratorio {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    display: block;
+}
+
+
+/*Ubica los botones de adelante y atras en la pagina de instrucciones*/
+.boton_adelante {
+    position: absolute;
+    top: 45%;
+    right: 2%;
+}
+
+.boton_atras {
+    position: absolute;
+    top: 45%;
+    left: 2%;
+}
+
+#indicador_empezar {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: parpadeo 0.5s infinite;
+}
+
+#indicador_empezar_cancha {
+    position: absolute;
+    bottom: 5%;
+    left: 70%;
+    animation: parpadeo 0.5s infinite;
+}
+
+.salida_boton {
+    display: flexbox;
+    position: absolute;
+    top: 11%;
+    left: 5%;
+}
+
+.boton_pista {
+    display: flexbox;
+    position: absolute;
+    top: 73%;
+    left: 13.8%;
+    cursor: pointer;
+}
+
+.boton_X {
+    display: flexbox;
+    position: absolute;
+    top: 11%;
+    left: 85%;
+    cursor: pointer;
+}
+
+.boton_siguiente {
+    display: flexbox;
+    position: absolute;
+    top: 93%;
+    left: 80%;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.opciones_contenedor {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    gap: 4vh;
+    top: 58%;
+    left: 72%;
+    height: auto;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+}
+
+.cartel_correcto {
+    display: flexbox;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.cartel_incorrecto {
+    display: flexbox;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.recompensa_preguntas {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    display: block;
+}
+
+.opciones_descifrar_contenedor {
+    display: flexbox;
+    position: absolute;
+    top: 85%;
+    left: 72%;
+    height: auto;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+}
+
+.opciones_resuelto_contenedor {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    top: 62%;
+    left: 72%;
+    height: auto;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+}
+
+.opciones_resuelto_roja_contenedor{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    height: auto;
+    top: 50%;
+    left: 72%;
+    transform: translate(-50%, -50%);
+}
+
+.opciones_resuelto_cancha_contenedor {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    top: 65%;
+    left: 72%;
+    height: auto;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+}
+
+.opciones_resuelto_global_contenedor {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    top: 65%;
+    left: 72%;
+    height: auto;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+}
+
+.opciones_resuelto_digital_contenedor {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    top: 65%;
+    left: 72%;
+    height: auto;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+}
+
+.flecha_mision_final {
+    display: flexbox;
+    position: absolute;
+    top: 82%;
+    left: 85%;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.computadora{
+    display: flexbox;
+    position: absolute;
+    top: 40%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+
+#mensaje_input {
+    position: absolute;
+    top: 59%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+    background-color: rgb(3, 29, 11);
+    font-family: 'Courier New', Courier, monospace;
+    outline: none;
+}
+
+.boton_siguiente_misionfinal{
+    display: flexbox;
+    position: absolute;
+    top: 93%;
+    left: 85%;
+    cursor: pointer;
+    z-index: 10;
+}
+
+
+#pista_n{
+    position: absolute;
+    cursor: pointer;
+    top: 32%;
+    left: 60%;
+}
+#pista_o{
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    left: 75%;
+}
+#pista_s{
+    position: absolute;
+    cursor: pointer;
+    top: 35%;
+    left: 80%;
+}
+.item img{
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.item:hover img{
+    opacity: 1;
+}

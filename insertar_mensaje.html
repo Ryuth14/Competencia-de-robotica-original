@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Mision Final</title>
+</head>
+
+<body>
+    <section id="insertar_mensaje">
+        <img class="portada_laboratorio" src="Images/mision-final/Insertar mensaje cifrado.png" alt="Escribe tu mensaje">
+
+        <input type="text" id="mensaje_input" placeholder="ESCRIBE AQUÍ EL MENSAJE" autofocus>
+
+        <script>
+            function verificarMensaje() {
+                const input = document.getElementById('mensaje_input').value.trim().toUpperCase();
+                const categoria = localStorage.getItem('categoria_actual') || 'morada'; // Default to morada if not set
+
+                const mensajes = {
+                    'roja': 'NOS ESTAN VIGILANDO TEN CUIDADO',
+                    'verde': 'CAMARAS ESPIAN DESDE LAS GRADAS',
+                    'morada': 'HACKEARON LA BASE CENTRAL HUYE',
+                    'marron': 'CUIDADO CON EL TALON DE AQUILES'
+                };
+
+                const mensajeCorrecto = mensajes[categoria];
+
+                if (input === mensajeCorrecto) {
+                    window.location.href = "mision_final_correcta.html";
+                } else {
+                    window.location.href = "mision_final_incorrecta.html";
+                }
+            }
+
+            // Permitir presionar Enter para verificar
+            document.getElementById('mensaje_input').addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    verificarMensaje();
+                }
+            });
+        </script>
+    </section>
+</body>
+
+</html>
